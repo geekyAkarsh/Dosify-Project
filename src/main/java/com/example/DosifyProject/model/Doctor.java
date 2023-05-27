@@ -30,7 +30,7 @@ public class Doctor {
     @Column(name = "mob_no",unique = true,nullable = false)
     String mobNo;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     Gender gender;
 

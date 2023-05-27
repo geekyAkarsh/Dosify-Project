@@ -25,7 +25,7 @@ public class VaccinationCenter {
     @Column(name = "location")
     String location;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "center_type")
     CenterType centerType;
 

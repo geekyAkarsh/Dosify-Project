@@ -26,7 +26,7 @@ public class User {
     String emailId;
     @Column(name = "mob_no",unique = true,nullable = false)
     String mobNo;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     Gender gender;
     @Column(name = "is_dose1_taken")

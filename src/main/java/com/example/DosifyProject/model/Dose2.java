@@ -24,7 +24,7 @@ public class Dose2 {
     @Column(name = "dose_id")
     String doseId; // generated using uuid
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "vaccine_type")
     VaccineType vaccineType;
 
