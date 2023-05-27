@@ -1,7 +1,6 @@
 package com.example.DosifyProject.model;
 
 import com.example.DosifyProject.Enum.CenterType;
-import com.example.DosifyProject.Enum.VaccineType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
