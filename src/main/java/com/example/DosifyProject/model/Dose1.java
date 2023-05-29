@@ -32,4 +32,8 @@ public class Dose1 {
     @Column(name = "vaccination_date")
     Date date;
 
+    @OneToOne
+    @JoinColumn
+    User user;
+
 }

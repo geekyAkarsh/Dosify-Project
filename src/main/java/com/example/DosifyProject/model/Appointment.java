@@ -32,4 +32,16 @@ public class Appointment {
     @Column(name = "dose_no")
     DoseNo doseNo;
 
+    @ManyToOne
+    @JoinColumn
+    User user;
+
+    @ManyToOne
+    @JoinColumn
+    Doctor doctor;
+
+    @ManyToOne
+    @JoinColumn
+    VaccinationCenter vaccinationCenter;
+
 }

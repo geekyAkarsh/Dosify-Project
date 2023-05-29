@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -33,5 +36,12 @@ public class Doctor {
     @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     Gender gender;
+
+    @OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL)
+    List<Appointment> appointmentList = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn
+    VaccinationCenter vaccinationCenter;
 
 }
