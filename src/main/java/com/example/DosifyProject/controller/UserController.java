@@ -1,8 +1,11 @@
 package com.example.DosifyProject.controller;
 
 import com.example.DosifyProject.dto.RequestDTO.UserRequestDto;
+import com.example.DosifyProject.dto.ResponseDTO.UserResponseDto;
 import com.example.DosifyProject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,15 +23,16 @@ public class UserController {
     public ResponseEntity addUser(@RequestBody UserRequestDto userRequestDto){
 
         try {
-            Optional<Boolean> added = userService.addUser(userRequestDto);
+            UserResponseDto userResponseDto = userService.addUser(userRequestDto);
+            return new ResponseEntity(userResponseDto, HttpStatusCode.valueOf(201));
         }catch (Exception ex){
-
+            return new ResponseEntity(ex.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
     // find by emailId
-    @GetMapping("/get")
-    public
+//    @GetMapping("/get")
+//    public
 
 
 }
