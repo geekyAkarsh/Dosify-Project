@@ -7,9 +7,11 @@ import com.example.DosifyProject.repository.UserRepository;
 import com.example.DosifyProject.service.UserService;
 import com.example.DosifyProject.transformer.UserTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
