@@ -20,10 +20,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto addUser(UserRequestDto userRequestDto) {
 
+        // convert request dto to user object
         User user = UserTransformer.userRequestDtoToUser(userRequestDto);
 
+        // save user object
         User savedUser = userRepository.save(user);
 
+        // convert user object to response dto and return
         return UserTransformer.userToUserResponseDto(savedUser);
     }
 }
