@@ -18,4 +18,5 @@ public class DoctorRequestDto {
     String mobNo;
     String emailId;
     Gender gender;
+    Integer centerId;
 }

@@ -16,5 +16,4 @@ public class DoctorResponseDto {
     String mobNo;
 
     CenterResponseDto centerResponseDto;
-
 }
