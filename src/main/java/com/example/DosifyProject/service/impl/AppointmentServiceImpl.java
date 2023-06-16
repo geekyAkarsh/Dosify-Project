@@ -74,11 +74,14 @@ public class AppointmentServiceImpl implements AppointmentService {
         }
 
         Appointment appointment = AppointmentTransformer.AppointmentRequestDtoToAppointment(appointmentRequestDto);
-        doctor.getAppointmentList().add(appointment);
         user.getAppointmentList().add(appointment);
+        User savedUser = userRepository.save(user); // save dose1 and dose2 and appointment
 
-        userRepository.save(user); // save dose1 and dose2 and appointment
+        Appointment savedAppointment = savedUser.getAppointmentList().get(savedUser.getAppointmentList().size()-1);
 
-        return AppointmentTransformer.AppointmentToAppointmentResponseDto(appointment);
+        doctor.getAppointmentList().add(savedAppointment);
+        doctorRepository.save(doctor); // optional
+
+        return AppointmentTransformer.AppointmentToAppointmentResponseDto(savedAppointment);
     }
 }
