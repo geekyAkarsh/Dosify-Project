@@ -5,7 +5,9 @@ import com.example.DosifyProject.model.Dose2;
 import com.example.DosifyProject.model.User;
 import com.example.DosifyProject.service.Dose2Service;
 import com.example.DosifyProject.transformer.Dose2Transformer;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Dose2ServiceImpl implements Dose2Service {
 
     @Override

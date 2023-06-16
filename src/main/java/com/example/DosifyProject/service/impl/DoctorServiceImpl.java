@@ -11,7 +11,6 @@ import com.example.DosifyProject.transformer.DoctorTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @Service
@@ -31,6 +30,9 @@ public class DoctorServiceImpl implements DoctorService {
         VaccinationCenter center = optionalCenter.get();
 
         Doctor doctor = DoctorTransformer.DoctorRequestDtoToDoctor(doctorRequestDto);
+        center.getDoctorList().add(doctor);
+        centerRepository.save(center);
 
+        return DoctorTransformer.DoctorToDoctorResponseDto(doctor);
     }
 }

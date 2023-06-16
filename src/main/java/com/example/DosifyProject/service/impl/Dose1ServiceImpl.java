@@ -7,7 +7,9 @@ import com.example.DosifyProject.repository.Dose1Repository;
 import com.example.DosifyProject.service.Dose1Service;
 import com.example.DosifyProject.transformer.Dose1Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Dose1ServiceImpl implements Dose1Service {
 
     @Override
