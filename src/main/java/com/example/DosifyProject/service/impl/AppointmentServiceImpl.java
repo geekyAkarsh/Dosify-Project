@@ -1,5 +1,6 @@
 package com.example.DosifyProject.service.impl;
 
+import com.example.DosifyProject.Enum.DoseNo;
 import com.example.DosifyProject.dto.RequestDTO.AppointmentRequestDto;
 import com.example.DosifyProject.dto.ResponseDTO.AppointmentResponseDto;
 import com.example.DosifyProject.exception.DoctorNotFoundException;
@@ -36,16 +37,21 @@ public class AppointmentServiceImpl implements AppointmentService {
 
         Optional<User> optionalUser = userRepository.findById(appointmentRequestDto.getUserId());
         if(optionalUser.isEmpty()){
-            throw new UserNotFoundException("User not found");
+            throw new UserNotFoundException("User doesn't exist");
         }
 
         Optional<Doctor> optionalDoctor = doctorRepository.findById(appointmentRequestDto.getDoctorId());
         if(optionalDoctor.isEmpty()){
-            throw new DoctorNotFoundException("Doctor not found");
+            throw new DoctorNotFoundException("Doctor doesn't exist");
         }
 
         User user = optionalUser.get();
         Doctor doctor = optionalDoctor.get();
+
+        if(appointmentRequestDto.getDoseNo() == DoseNo.DOSE_1){
+            dose1Service.createDose1Appointment();
+        }
+
 
 
     }
