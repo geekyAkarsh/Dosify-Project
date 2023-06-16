@@ -39,5 +39,4 @@ public class Appointment {
     @ManyToOne
     @JoinColumn
     Doctor doctor;
-
 }
